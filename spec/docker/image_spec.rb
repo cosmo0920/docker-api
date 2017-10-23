@@ -497,7 +497,7 @@ describe Docker::Image do
     let(:non_streamed) do
       Docker.connection.get(
         '/images/get',
-        'names' => URI.encode(image)
+        'names' => URI.encode_www_form_component(image)
       )
     end
     let(:streamed) { '' }
